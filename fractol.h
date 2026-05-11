@@ -16,4 +16,8 @@ typedef struct s_data
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
+// mandelbrot
+void	calc_mandelbrot(t_data *img, double x_c, double y_c);
+void	plot_mandelbrot(t_data *img);
+
 #endif
