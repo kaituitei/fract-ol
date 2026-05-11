@@ -32,4 +32,5 @@ libft/libft.a :
 $(NAME) : $(OBJS) | libft/libft.a minilibx/libmlx.a
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
+.NOTPARALLEL: re
 .PHONY: all clean fclean re libft
