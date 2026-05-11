@@ -3,6 +3,8 @@
 # include <mlx.h>
 # include <math.h>
 
+# define MAX_ITER 500
+
 typedef struct s_data
 {
     void	*img;
