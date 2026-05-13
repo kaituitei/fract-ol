@@ -2,15 +2,16 @@ NAME := fractol
 
 SRC := $(wildcard *.c)
 SRC += $(wildcard plot/*.c)
+SRC += $(wildcard mandelbort/*.c)
 OBJS := $(SRC:.c=.o)
 
 CC = cc
 
 ORIG_CFLAGS := $(CFLAGS)
-
-CFLAGS += -Ilibft -Iminilibx
-LDFLAGS += -Llibft -Lminilibx
-LDLIBS := -lft -lm -lmlx -lX11 -lXext
+CFLAGS += -Wall -Werror -Wextra
+CFLAGS += -Ilibft -Iminilibx -Ift_printf -include fractal.h
+LDFLAGS += -Llibft -Lminilibx -Lft_printf
+LDLIBS := -lft -lm -lmlx -lX11 -lftprintf -lXext
 
 all : $(NAME)
 clean :
@@ -29,7 +30,10 @@ minilibx/libmlx.a:
 libft/libft.a :
 	CFLAGS='$(ORIG_CFLAGS)' $(MAKE) -C libft all
 
-$(NAME) : $(OBJS) | libft/libft.a minilibx/libmlx.a
+ft_printf/libftprintf.a :
+	CFLAGS='$(ORIG_CFLAGS)' $(MAKE) -C libftprintf all
+
+$(NAME) : $(OBJS) | libft/libft.a minilibx/libmlx.a ft_printf/libftprintf.a
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 .NOTPARALLEL: re

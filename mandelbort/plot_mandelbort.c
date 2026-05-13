@@ -1,10 +1,9 @@
-#include "fractol.h"
+#include "../fractol.h"
 
 void	plot_mandelbrot(t_data *img)
 {
     double	x_c;
     double	y_c;
-
 
     x_c = -9.6;
     while (x_c < 9.6)

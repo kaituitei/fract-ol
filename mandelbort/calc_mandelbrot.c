@@ -1,6 +1,6 @@
-#include "fractal.h"
+#include "../fractol.h"
 
-void	calc_mandelbrot(t_data *img, double x_c, double y_c) // x_c, y_c = real position on coordinate system
+void	calc_mandelbrot(t_data *img, t_coor *coor) // x_c, y_c = real position on coordinate system
 {
     double	x;
     double	y;
@@ -13,14 +13,19 @@ void	calc_mandelbrot(t_data *img, double x_c, double y_c) // x_c, y_c = real pos
     iter = 0;
     while ((x * x) + ( y * y) <= 4 && iter < MAX_ITER) // escape time algo
     {
-	x_temp = (x * x) - (y * y) + x_c;
-	y = 2 * x * y + y_c;
+	x_temp = (x * x) - (y * y) + coor->x_c;
+	y = 2 * x * y + coor->y_c;
 	x = x_temp;
 	iter++;
     }
     if (iter == MAXITER)
     {
 	color = 0x00FF0000;
-	my_mlx_pixel_put(&img, convert_pix(x_c), convert_pix(y_c), color);
+	my_mlx_pixel_put(img, convert_to_pixel(img, coor), color);
+    }
+    else
+    {
+	color = 0x00000000;
+	my_mlx_pixel_put(img, convert_to_pixel(img, coor), color);
     }
 }
