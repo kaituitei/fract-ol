@@ -10,7 +10,7 @@
 # define MAX_ITER 500
 # define WIDTH 1920
 # define HEIGHT 1080
-# define X_XIN -9.6
+# define X_MIN -9.6
 # define X_MAX 9.6
 # define Y_MIN -5.4
 # define Y_MAX 5.4
@@ -37,11 +37,11 @@ typedef struct s_coor
 void	my_mlx_pixel_put(t_data *data, t_coor *coor, int color);
 
 // mandelbrot
-void	calc_mandelbrot(t_data *img, double x_c, double y_c);
+void	calc_mandelbrot(t_data *img, double x_c, double x_y); // x_c, y_c = real position on coordinate system
 void	plot_mandelbrot(t_data *img);
 
 //matrix
-t_coor	*convert_to_pixel(t_data *img, t_coor *coor);
-int	**new_mat(int rows, int cols);
+t_coor	*convert_to_pixel(t_data *img, double x_c, double x_y);
+int	**new_mat(size_t rows, size_t cols);
 
 #endif
