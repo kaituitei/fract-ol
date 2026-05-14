@@ -10,10 +10,10 @@
 # define MAX_ITER 500
 # define WIDTH 1920
 # define HEIGHT 1080
-# define X_MIN -9.6
-# define X_MAX 9.6
-# define Y_MIN -5.4
-# define Y_MAX 5.4
+# define X_MIN -4.6
+# define X_MAX 4.6
+# define Y_MIN -4.6
+# define Y_MAX 4.6
 
 typedef struct s_data
 {
@@ -25,23 +25,32 @@ typedef struct s_data
     double	zoom;
     int		cx;
     int		cy;
+    int		max_iter;
+    int		m_x; // mouse coordinate
+    int		m_y; // mouse coordinate
 }		t_data;
 
-typedef struct s_coor
+typedef struct s_pcor
 {
     int	x_c;
     int	y_c;
-}		t_coor;
+}		t_pcor;
+
+typedef struct s_gcor
+{
+    double	x;
+    double	y ;
+}		t_gcor;
 
 //plot
-void	my_mlx_pixel_put(t_data *data, t_coor *coor, int color);
+void	my_mlx_pixel_put(t_data *data, const int p_x, const int p_y, int color);
 
 // mandelbrot
-void	calc_mandelbrot(t_data *img, double x_c, double x_y); // x_c, y_c = real position on coordinate system
+int	calc_mandelbrot(t_gcor *gcor);
 void	plot_mandelbrot(t_data *img);
 
-//matrix
-t_coor	*convert_to_pixel(t_data *img, double x_c, double x_y);
-int	**new_mat(size_t rows, size_t cols);
+//math
+t_gcor	*offset_cal(const int p_x, const int p_y);
+t_gcor	*convert_to_gcor(t_data *img, const int p_x, const int p_y);
 
 #endif

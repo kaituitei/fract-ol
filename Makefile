@@ -3,7 +3,7 @@ NAME := fractol
 SRC := $(wildcard *.c)
 SRC += $(wildcard plot/*.c)
 SRC += $(wildcard mandelbort/*.c)
-SRC += $(wildcard matric/*.c)
+SRC += $(wildcard math/*.c)
 OBJS := $(SRC:.c=.o)
 
 CC = cc

@@ -2,18 +2,23 @@
 
 void	plot_mandelbrot(t_data *img)
 {
-    double	x_c;
-    double	y_c;
+    int	p_x;
+    int	p_y;
+    int	iter;
 
-    x_c = -9.6;
-    while (x_c < 9.6)
+    p_x = 0;
+    while (p_x < WIDTH)
     {
-	y_c = -5.4;
-	while (y_c < 5.4)
+	p_y = 0;
+	while (p_y < HEIGHT)
 	{
-	   calc_mandelbrot(img, x_c, y_c);
-	   y_c += 0.01;
+	   iter = calc_mandelbrot(convert_to_gcor(img, p_x, p_y));
+	   if (iter == img->max_iter)
+		my_mlx_pixel_put(img, p_x, p_y, 0x00FF0000);
+	   else
+	       my_mlx_pixel_put(img, p_x, p_y, 0x00000000);
+	   p_y++;
 	}
-	x_c += 0.01;
+	p_x++;
     }
 }

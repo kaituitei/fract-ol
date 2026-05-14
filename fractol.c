@@ -12,8 +12,11 @@ int	main(void)
 	img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	img.zoom = 1.0;
-	img.cx = 960;
-	img.cy = 540;
+	img.cx = WIDTH / 2;
+	img.cy = HEIGHT / 2;
+	img.max_iter = 50;
+	img.m_x = 0;
+	img.m_y = 0;
 	plot_mandelbrot(&img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);

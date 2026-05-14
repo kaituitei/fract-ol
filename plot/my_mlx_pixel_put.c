@@ -1,11 +1,11 @@
 #include "../fractol.h"
 
-void	my_mlx_pixel_put(t_data *data, t_coor *coor, int color)
+void	my_mlx_pixel_put(t_data *data, const int p_x, const int p_y, int color)
 {
     char *dst;
 
-    if ((coor->x_c < 0 || coor->x_c > 1980) || (coor->y_c < 0 || coor->y_c > 1080))
+    if ((p_x < 0 || p_y > 1980) || (p_x < 0 || p_y > 1080))
 	return ;
-    dst = data->addr + (coor->y_c * data->line_length + coor->x_c * (data->bits_per_pixel / 8));
+    dst = data->addr + (p_y * data->line_length + p_x * (data->bits_per_pixel / 8));
     *(unsigned int*)dst = color;
 }
