@@ -19,5 +19,6 @@ int	calc_mandelbrot(t_gcor *gcor)
 	x = x_temp;
 	iter++;
     }
+    free(gcor);
     return (iter);
 }

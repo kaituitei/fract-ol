@@ -7,13 +7,13 @@
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-# define MAX_ITER 500
-# define WIDTH 1920
-# define HEIGHT 1080
-# define X_MIN -4.6
-# define X_MAX 4.6
-# define Y_MIN -4.6
-# define Y_MAX 4.6
+# define MAX_ITER 50
+# define WIDTH 1920.0
+# define HEIGHT 1080.0
+# define X_MIN -1.6
+# define X_MAX 1.6
+# define Y_MIN -0.9
+# define Y_MAX 0.9
 
 typedef struct s_data
 {
