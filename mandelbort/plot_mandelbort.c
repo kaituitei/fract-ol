@@ -12,7 +12,7 @@ void	plot_mandelbrot(t_data *img)
 	p_y = 0;
 	while (p_y < HEIGHT)
 	{
-	   iter = calc_mandelbrot(convert_to_gcor(img, p_x, p_y));
+	   iter = calc_mandelbrot(convert_to_complex(img, p_x, p_y));
 	   if (iter == img->max_iter)
 		my_mlx_pixel_put(img, p_x, p_y, 0x00FF0000);
 	   else

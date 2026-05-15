@@ -36,21 +36,21 @@ typedef struct s_pcor
     int	y_c;
 }		t_pcor;
 
-typedef struct s_gcor
+typedef struct s_complex 
 {
-    double	x;
-    double	y ;
-}		t_gcor;
+    double	real;
+    double	i;
+}		t_complex;
 
 //plot
 void	my_mlx_pixel_put(t_data *data, const int p_x, const int p_y, int color);
 
 // mandelbrot
-int	calc_mandelbrot(t_gcor *gcor);
+int	calc_mandelbrot(t_complex *complex);
 void	plot_mandelbrot(t_data *img);
 
 //math
-t_gcor	*offset_cal(const int p_x, const int p_y);
-t_gcor	*convert_to_gcor(t_data *img, const int p_x, const int p_y);
+t_complex	*offset_cal(const int p_x, const int p_y);
+t_complex	*convert_to_complex(t_data *img, const int p_x, const int p_y);
 
 #endif

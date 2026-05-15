@@ -1,6 +1,6 @@
 #include "../fractol.h"
 
-int	calc_mandelbrot(t_gcor *gcor) 
+int	calc_mandelbrot(t_complex *complex) 
 {
     double	x;
     double	y;
@@ -10,15 +10,18 @@ int	calc_mandelbrot(t_gcor *gcor)
     x = 0;
     y = 0;
     iter = 0;
-    if (!gcor)
+    if (!complex)
+    {
+	free(complex);
 	return (MAX_ITER);
+    }
     while ((x * x) + (y * y) <= 4 && iter < MAX_ITER) // escape time algorithm
     {
-	x_temp = (x * x) - (y * y) + gcor->x;
-	y = 2 * x * y + gcor->y;
+	x_temp = (x * x) - (y * y) + complex->real;
+	y = 2 * x * y + complex->i;
 	x = x_temp;
 	iter++;
     }
-    free(gcor);
+    free(complex);
     return (iter);
 }
