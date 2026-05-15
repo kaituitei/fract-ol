@@ -4,10 +4,11 @@
 # include <math.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdint.h>
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-# define MAX_ITER 50
+# define MAX_ITER 100
 # define WIDTH 1920.0
 # define HEIGHT 1080.0
 # define X_MIN -1.6
@@ -52,5 +53,6 @@ void	plot_mandelbrot(t_data *img);
 //math
 t_complex	*offset_cal(const int p_x, const int p_y);
 t_complex	*convert_to_complex(t_data *img, const int p_x, const int p_y);
+uint32_t	get_color(const int iter);
 
 #endif

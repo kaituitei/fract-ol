@@ -14,7 +14,7 @@ int	main(void)
 	img.zoom = 1.0;
 	img.cx = WIDTH / 2;
 	img.cy = HEIGHT / 2;
-	img.max_iter = 50;
+	img.max_iter = MAX_ITER;
 	img.m_x = 0;
 	img.m_y = 0;
 	plot_mandelbrot(&img);

@@ -14,9 +14,9 @@ void	plot_mandelbrot(t_data *img)
 	{
 	   iter = calc_mandelbrot(convert_to_complex(img, p_x, p_y));
 	   if (iter == img->max_iter)
-		my_mlx_pixel_put(img, p_x, p_y, 0x00FF0000);
+		my_mlx_pixel_put(img, p_x, p_y, 0x00000000);
 	   else
-	       my_mlx_pixel_put(img, p_x, p_y, 0x00000000);
+	       my_mlx_pixel_put(img, p_x, p_y, get_color(iter));
 	   p_y++;
 	}
 	p_x++;
