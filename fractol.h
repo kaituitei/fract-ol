@@ -1,12 +1,13 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include <mlx.h>
+# include <mlx_int.h>
 # include <math.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdint.h>
-# include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "libft.h"
+# include "ft_printf.h"
 
 # define MAX_ITER 100
 # define WIDTH 1920.0
@@ -18,6 +19,7 @@
 
 typedef struct s_data
 {
+    t_xvar	*mlx;	
     void	*img;
     char	*addr;
     int		bits_per_pixel;
@@ -43,16 +45,19 @@ typedef struct s_complex
     double	i;
 }		t_complex;
 
-//plot
+// plot
 void	my_mlx_pixel_put(t_data *data, const int p_x, const int p_y, int color);
 
 // mandelbrot
 int	calc_mandelbrot(t_complex *complex);
 void	plot_mandelbrot(t_data *img);
 
-//math
+// math
 t_complex	*offset_cal(const int p_x, const int p_y);
 t_complex	*convert_to_complex(t_data *img, const int p_x, const int p_y);
 uint32_t	get_color(const int iter);
+
+// event
+void	ft_mandelbrot_hook(void *para);
 
 #endif

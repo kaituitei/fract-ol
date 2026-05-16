@@ -1,4 +1,3 @@
-#include <mlx.h>
 #include "fractol.h"
 
 int	main(void)
@@ -7,7 +6,7 @@ int	main(void)
 	void	*mlx;
 	void	*mlx_win;
 
-	mlx = mlx_init();
+	img.mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
 	img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
@@ -18,6 +17,7 @@ int	main(void)
 	img.m_x = 0;
 	img.m_y = 0;
 	plot_mandelbrot(&img);
+	mlx_loop_hook(img.mlx, ft_mandelbrot_hook, &img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
