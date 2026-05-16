@@ -1,6 +1,5 @@
 #include "../fractol.h"
 #include <math.h>
-#include <stdint.h>
 
 static void	fill_palette_0_to_15(uint32_t *p)
 {
