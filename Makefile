@@ -4,6 +4,7 @@ SRC := $(wildcard *.c)
 SRC += $(wildcard plot/*.c)
 SRC += $(wildcard mandelbort/*.c)
 SRC += $(wildcard math/*.c)
+SRC += $(widlcard event/*.c)
 OBJS := $(SRC:.c=.o)
 
 CC = cc
@@ -13,7 +14,7 @@ CFLAGS += -Wall -Werror -Wextra
 CFLAGS += -Ilibft -Iminilibx -Ift_printf -include fractol.h
 CLGAGS += -g3 -glldb -fsanitize=address,undefined
 LDFLAGS = -Llibft -Lminilibx -Lft_printf -fsanitize=address,undefined
-LDLIBS := -lft -lm -lmlx_int -lmlx -lX11 -lftprintf -lXext
+LDLIBS := -lft -lm -lmlx -lX11 -lftprintf -lXext
 
 all : $(NAME)
 clean :

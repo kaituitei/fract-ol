@@ -1,7 +1,6 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include <mlx.h>
-# include <mlx_int.h>
 # include <math.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -19,7 +18,8 @@
 
 typedef struct s_data
 {
-    t_xvar	*mlx;	
+    void	*mlx;	
+    void	*mlx_win;
     void	*img;
     char	*addr;
     int		bits_per_pixel;
@@ -58,6 +58,6 @@ t_complex	*convert_to_complex(t_data *img, const int p_x, const int p_y);
 uint32_t	get_color(const int iter);
 
 // event
-void	ft_mandelbrot_hook(void *para);
+int	ft_close_win(int keycode, t_data *img);
 
 #endif
