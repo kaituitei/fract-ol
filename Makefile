@@ -4,7 +4,7 @@ SRC := $(wildcard *.c)
 SRC += $(wildcard plot/*.c)
 SRC += $(wildcard mandelbort/*.c)
 SRC += $(wildcard math/*.c)
-SRC += $(widlcard event/*.c)
+SRC += $(wildcard event/*.c)
 OBJS := $(SRC:.c=.o)
 
 CC = cc
