@@ -58,6 +58,6 @@ t_complex	*convert_to_complex(t_data *img, const int p_x, const int p_y);
 uint32_t	get_color(const int iter);
 
 // event
-int	ft_close_win(int keycode, t_data *img);
+int	ft_close_win(t_data *img);
 
 #endif

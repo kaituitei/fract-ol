@@ -8,9 +8,9 @@ int	main(void)
 
 	mlx = mlx_init();
 	img.mlx = mlx;
-	mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
+	mlx_win = mlx_new_window(img.mlx, WIDTH, HEIGHT, "Hello world!");
 	img.mlx_win = mlx_win;
-	img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
+	img.img = mlx_new_image(img.mlx, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	img.zoom = 1.0;
 	img.cx = WIDTH / 2;
@@ -19,7 +19,7 @@ int	main(void)
 	img.m_x = 0;
 	img.m_y = 0;
 	plot_mandelbrot(&img);
-	mlx_hook(img.mlx, 2, 1l<<0, ft_close_win, &img);
+	mlx_hook(img.mlx_win, 17, 0L, ft_close_win, &img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
