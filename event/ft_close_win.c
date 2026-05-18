@@ -1,4 +1,4 @@
-#include "fractol.h"
+#include "../fractol.h"
 
 int	ft_close_win(int keycode, t_data *img)
 {
