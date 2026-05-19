@@ -24,7 +24,6 @@ int	main(void)
 	mlx_key_hook(img.mlx_win, ft_key_hook, &img);
 	mlx_hook(img.mlx_win, 17, 0L, ft_close_win, &img);
 	plot_mandelbrot(&img);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
 

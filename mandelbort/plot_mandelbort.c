@@ -22,4 +22,6 @@ void	plot_mandelbrot(t_data *img)
 	}
 	p_x++;
     }
+    printf("x_offset:%f\ny_offset:%f\n", img->x_offset, img->y_offset);
+    mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 0, 0);
 }

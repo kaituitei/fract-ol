@@ -20,7 +20,6 @@ int	ft_key_hook(int key_code, void *data)
     else if (key_code == d)
 	fractal->x_offset += 100 / fractal->zoom;
     plot_mandelbrot(fractal);
-    printf("x_offset: %f\ny_offset: %f\n", fractal->x_offset, fractal->y_offset);
     ft_printf("Listening..\n");
     return (0);
 }

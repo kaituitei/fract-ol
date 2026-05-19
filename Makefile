@@ -12,8 +12,8 @@ CC = cc
 ORIG_CFLAGS := $(CFLAGS)
 CFLAGS += -Wall -Werror -Wextra -c
 CFLAGS += -Ilibft -Iminilibx -Ift_printf -include fractol.h
-CLGAGS += -g3 -glldb #-fsanitize=address,undefined
-LDFLAGS = -Llibft -Lminilibx -Lft_printf #-fsanitize=address,undefined
+CLGAGS += -g3 -glldb -fsanitize=address,undefined
+LDFLAGS = -Llibft -Lminilibx -Lft_printf -fsanitize=address,undefined
 LDLIBS := -lft -lm -lmlx -lX11 -lftprintf -lXext
 
 all : $(NAME)
