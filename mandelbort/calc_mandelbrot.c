@@ -1,6 +1,6 @@
 #include "../fractol.h"
 
-int	calc_mandelbrot(t_complex *complex) 
+int	calc_mandelbrot(t_data *img, t_complex *complex) 
 {
     double	x;
     double	y;
@@ -17,8 +17,8 @@ int	calc_mandelbrot(t_complex *complex)
     }
     while ((x * x) + (y * y) <= 4 && iter < MAX_ITER) // escape time algorithm
     {
-	x_temp = (x * x) - (y * y) + complex->real;
-	y = 2 * x * y + complex->i;
+	x_temp = (x * x) - (y * y) + complex->real + img->x_offset;
+	y = 2 * x * y + complex->i + img->y_offset;
 	x = x_temp;
 	iter++;
     }

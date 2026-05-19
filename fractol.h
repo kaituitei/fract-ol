@@ -22,6 +22,10 @@
 # define DOWN 40
 # define LEFT 37
 # define RIGHT 39
+# define w 119
+# define a 97
+# define s 115
+# define d 100
 # define R 15
 # define C 8
 # define H 4
@@ -44,6 +48,8 @@ typedef struct s_data
     int		max_iter;
     int		m_x; // mouse coordinate
     int		m_y; // mouse coordinate
+    double	x_offset;
+    double	y_offset;
 }		t_data;
 
 typedef struct s_pcor
@@ -62,7 +68,7 @@ typedef struct s_complex
 void	my_mlx_pixel_put(t_data *data, const int p_x, const int p_y, int color);
 
 // mandelbrot
-int	calc_mandelbrot(t_complex *complex);
+int	calc_mandelbrot(t_data *img, t_complex *complex);
 void	plot_mandelbrot(t_data *img);
 
 // math

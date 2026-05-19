@@ -18,6 +18,9 @@ int	main(void)
 	img.max_iter = MAX_ITER;
 	img.m_x = 0;
 	img.m_y = 0;
+	img.x_offset = 0.0;
+	img.y_offset = 0.0;
+	//mlx_mosue_hook(img.mlx_win, ft_mouse_hook, &data);
 	mlx_key_hook(img.mlx_win, ft_key_hook, &img);
 	mlx_hook(img.mlx_win, 17, 0L, ft_close_win, &img);
 	plot_mandelbrot(&img);
