@@ -16,6 +16,19 @@
 # define Y_MIN -0.9
 # define Y_MAX 0.9
 
+// KEY CODES
+# define ESC 53
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define R 15
+# define C 8
+# define H 4
+# define J 38
+# define P 35
+# define M 46
+
 typedef struct s_data
 {
     void	*mlx;	
@@ -59,5 +72,6 @@ uint32_t	get_color(const int iter);
 
 // event
 int	ft_close_win(t_data *img);
+int	ft_key_hook(int key_code, void *data);
 
 #endif
