@@ -8,7 +8,7 @@
 # include "libft.h"
 # include "ft_printf.h"
 
-# define MAX_ITER 100
+# define MAX_ITER 50
 # define WIDTH 1920.0
 # define HEIGHT 1080.0
 # define X_MIN -1.6

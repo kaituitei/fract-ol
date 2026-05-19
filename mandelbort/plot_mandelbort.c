@@ -7,7 +7,6 @@ void	plot_mandelbrot(t_data *img)
     int	iter;
 
     p_x = 0;
-    printf("Re-plotting\n");
     while (p_x < WIDTH)
     {
 	p_y = 0;
@@ -22,6 +21,5 @@ void	plot_mandelbrot(t_data *img)
 	}
 	p_x++;
     }
-    printf("x_offset:%f\ny_offset:%f\n", img->x_offset, img->y_offset);
     mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 0, 0);
 }
