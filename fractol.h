@@ -17,11 +17,11 @@
 # define Y_MAX 0.9
 
 // KEY CODES
-# define ESC 53
-# define UP 126
-# define DOWN 125
-# define LEFT 123
-# define RIGHT 124
+# define ESC 65307
+# define UP 38
+# define DOWN 40
+# define LEFT 37
+# define RIGHT 39
 # define R 15
 # define C 8
 # define H 4
